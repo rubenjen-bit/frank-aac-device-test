@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261002-05-536c453","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/6542d56fbfe7a3eb.telemetry_sdk.js" integrity="sha512-ECdM0nK7EkwDuOqho2qxgyRQXyBHk9hZqRKMBr+Xsu6zjeHlt+qkO2N2YRiHN7Kg4e1fEHDhjIp4bGJYVypv1g=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frank's AAC Talk Board</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#23344d; --coral:#f26e61; --sun:#f9bf4b; --mint:#9fdcc8; --cream:#fff8eb; --navy:#23344d; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-width:320px; font-family:"DM Sans",sans-serif; color:var(--ink); }
+    .app-shell { width:100%; min-height:calc(100 * min(var(--vh, 1vh), 1vh)); background:#fff8eb; background-image:radial-gradient(circle at 8% 7%,#ffe1aa 0 3%,transparent 3.2%),radial-gradient(circle at 92% 14%,#cdeee2 0 5%,transparent 5.2%),linear-gradient(135deg,#fff8eb,#fffdf8); }
+    .friendly-title { font-family:Fraunces,serif; }
+    .category-tab { min-width:108px; transition:transform .16s ease,box-shadow .16s ease; }
+    .category-tab:hover,.category-tab:focus-visible { transform:translateY(-3px); }
+    .category-tab.active { background:var(--navy)!important; color:#fff!important; box-shadow:0 8px 0 #152439; }
+    .talk-button { min-height:178px; transition:transform .12s ease,box-shadow .12s ease,filter .12s ease; box-shadow:0 7px 0 rgba(35,52,77,.17); }
+    .talk-button:hover,.talk-button:focus-visible { transform:translateY(-3px); box-shadow:0 10px 0 rgba(35,52,77,.18); }
+    .talk-button:active { transform:translateY(5px) scale(.98); box-shadow:0 2px 0 rgba(35,52,77,.18); filter:saturate(1.15); }
+    .talk-symbol { font-size:clamp(3.4rem,7vw,5.8rem); line-height:1; filter:drop-shadow(0 3px 0 rgba(35,52,77,.08)); }
+    button:focus-visible,input:focus-visible,select:focus-visible { outline:4px solid #f26e61; outline-offset:3px; }
+    .editor-row { border-bottom:1px solid #e7ded0; }
+    .editor-row:last-child { border-bottom:0; }
+    .toast { transform:translateY(120px); opacity:0; transition:.25s ease; }
+    .toast.show { transform:translateY(0); opacity:1; }
+    .modal-backdrop { background:rgba(25,38,56,.62); }
+    .hidden-view { display:none!important; }
+    .symbol-choice { font-size:1.9rem; border:2px solid transparent; }
+    .symbol-choice.selected { border-color:#23344d; background:#fff4cc; }
+    @media (max-width:640px) { .talk-button{min-height:145px}.category-tab{min-width:92px}.talk-symbol{font-size:3.6rem} }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/6c2ecc939521f244.data_sdk.js" type="text/javascript" integrity="sha512-gRx8s+XsZDN6mSIQu2sivLZysbV0WHhb5kXNUWlgVb5lCMU1foJYukyMEDPv8Tnoocb8iwqB4XdRrWc7oEGzIQ=="></script>
+  <script src="/_sdk/b443124ed7f67435.editing_sdk.js" type="text/javascript" integrity="sha512-oLX1dpTmN2mZumhKQc0okubrUJ8MqA6c5fM5NHln6+9t8KpYrcElyL7NOV7dV6pLkMWSzWZRFAI+WLGRVrl64A=="></script>
+  <script src="/_sdk/ab4336f91e694f96.resizing_sdk.js" type="text/javascript" integrity="sha512-cxmeUrBrNlwwLr+tEu/iwM5F3boeK4qDMoH3QjUPqJptkO5NkaDVhQvyIHIn+3EflI5/uubWzkSA78B1tCswgA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="app-shell" style="background: rgb(255, 248, 235);">
+  <header data-template-id="app-header" class="canva-header w-full border-b-4 border-[#f4d9a7] bg-[#fffdf8]/90 px-4 py-4 sm:px-7" style="background: rgb(255, 253, 248);">
+   <div class="mx-auto flex max-w-6xl items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+     <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f9bf4b] text-2xl shadow-sm" aria-hidden="true">
+      💬
+     </div>
+     <div>
+      <p data-template-id="header-kicker" class="canva-text m-0 text-xs font-bold uppercase tracking-[.16em]" style="color: rgb(102, 119, 139); font-weight: 700; font-style: normal; font-size: 12px;">My talking board</p>
+      <h1 data-template-id="app-title" class="canva-text friendly-title m-0 leading-tight" style="color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 36px;">Frank's Talk Board</h1>
+     </div>
+    </div>
+    <div class="flex items-center gap-2"><button id="homeBtn" data-template-id="home-button" class="canva-button flex min-h-12 items-center gap-2 rounded-2xl px-4 font-bold shadow-sm transition hover:-translate-y-0.5" type="button" style="background: rgb(228, 243, 235); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Home</button> <button id="caregiverBtn" data-template-id="caregiver-button" class="canva-button flex min-h-12 items-center gap-2 rounded-2xl px-4 font-bold shadow-sm transition hover:-translate-y-0.5" type="button" style="background: rgb(249, 191, 75); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Grown-ups</button>
+    </div>
+   </div>
+  </header>
+  <main class="mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-7">
+   <section id="boardView" aria-label="Communication board">
+    <section data-template-id="message-panel" class="canva-panel mb-6 rounded-[2rem] border-2 border-[#f1d4a6] p-5 shadow-sm sm:p-7" style="background: rgb(255, 253, 248);">
+     <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+      <div id="messageSymbol" class="flex h-20 w-20 shrink-0 items-center justify-center rounded-[1.6rem] bg-[#f9bf4b] text-5xl" aria-hidden="true">
+       👋
+      </div>
+      <div class="min-w-0 flex-1">
+       <p data-template-id="message-helper" class="canva-text mb-1 text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(102, 119, 139); font-weight: 700; font-style: normal; font-size: 13px;">I want to say…</p>
+       <div id="currentPhrase" class="text-2xl font-bold sm:text-3xl" role="status" aria-live="polite">
+        Choose a picture
+       </div>
+      </div><button id="replayBtn" data-template-id="replay-button" class="canva-button flex min-h-16 shrink-0 items-center justify-center gap-2 rounded-2xl px-5 font-bold shadow-sm disabled:cursor-not-allowed disabled:opacity-50" type="button" disabled="" style="background: rgb(242, 110, 97); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 18px;">Again</button>
+     </div>
+    </section>
+    <nav aria-label="Communication categories" class="mb-6">
+     <div id="categoryTabs" class="flex gap-3 overflow-x-auto pb-3"></div>
+    </nav>
+    <section aria-labelledby="gridHeading">
+     <div class="mb-3 flex items-center justify-between gap-3">
+      <h2 id="gridHeading" class="text-xl font-bold">Pictures to say</h2>
+      <p id="buttonCount" class="rounded-full bg-[#e4f3eb] px-3 py-1 text-sm font-bold"></p>
+     </div>
+     <div id="buttonGrid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"></div>
+     <div id="emptyBoard" class="hidden rounded-3xl border-2 border-dashed border-[#d8c5a4] bg-white/70 p-10 text-center">
+      <div class="mb-3 text-5xl">
+       🌱
+      </div>
+      <p class="m-0 font-bold">A caregiver can add pictures here.</p>
+     </div>
+    </section>
+    <aside data-template-id="history-panel" class="canva-panel mt-7 rounded-[1.8rem] border-2 border-[#d0eadf] p-5" style="background: rgb(247, 252, 249);">
+     <div class="mb-3 flex items-center gap-2"><i data-lucide="clock-3" class="h-5 w-5" aria-hidden="true"></i>
+      <h2 data-template-id="history-title" class="canva-text m-0 font-bold" style="color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Recent messages</h2>
+     </div>
+     <div id="historyList" class="flex flex-wrap gap-2" aria-live="polite"></div>
+     <p id="historyEmpty" class="m-0 text-sm text-[#607185]">Recent messages will appear here.</p>
+    </aside>
+   </section>
+   <section id="caregiverView" class="hidden-view" aria-label="Caregiver settings">
+    <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+     <div>
+      <p data-template-id="caregiver-kicker" class="canva-text mb-1 text-sm font-bold uppercase tracking-[.14em]" style="color: rgb(184, 90, 69); font-weight: 700; font-style: normal; font-size: 13px;">Grown-up area</p>
+      <h2 data-template-id="caregiver-title" class="canva-text friendly-title m-0" style="color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 27px;">Make it Frank's</h2>
+     </div><button id="backToBoardBtn" data-template-id="back-button" class="canva-button flex min-h-12 items-center gap-2 rounded-2xl px-4 font-bold shadow-sm" type="button" style="background: rgb(228, 243, 235); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Back to board</button>
+    </div>
+    <div class="grid gap-5 lg:grid-cols-[.9fr_1.4fr]">
+     <aside class="space-y-5">
+      <section data-template-id="voice-panel" class="canva-panel rounded-[1.7rem] p-5 shadow-sm" style="background: rgb(255, 253, 248);">
+       <h3 data-template-id="voice-title" class="canva-text mb-4 font-bold" style="color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 19px;">Voice &amp; labels</h3><label class="mb-2 block text-sm font-bold" for="voiceSelect">Choose voice</label> <select id="voiceSelect" class="w-full rounded-xl border-2 border-[#d8c5a4] bg-white p-3"></select> <label class="mb-2 mt-4 block text-sm font-bold" for="rateRange">Speaking speed <span id="rateValue">1.0</span></label> <input id="rateRange" class="w-full accent-[#f26e61]" type="range" min="0.65" max="1.25" step="0.05" value="0.9">
+       <div class="mt-4 flex gap-2"><button id="voicePreviewBtn" data-template-id="voice-preview-button" class="canva-button flex min-h-11 flex-1 items-center justify-center gap-2 rounded-xl px-3 font-bold" type="button" style="background: rgb(223, 243, 233); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Preview</button> <button id="stopVoiceBtn" data-template-id="voice-stop-button" class="canva-button flex min-h-11 items-center justify-center rounded-xl px-4 font-bold" type="button" style="background: rgb(243, 232, 213); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Stop</button>
+       </div><label class="mt-5 flex cursor-pointer items-center gap-3 rounded-xl bg-[#fff8eb] p-3 font-bold"> <input id="labelsToggle" type="checkbox" class="h-5 w-5 accent-[#f26e61]"> <span>Show small phrase labels</span> </label>
+      </section>
+      <section data-template-id="care-actions-panel" class="canva-panel rounded-[1.7rem] p-5 shadow-sm" style="background: rgb(255, 253, 248);">
+       <h3 data-template-id="care-actions-title" class="canva-text mb-3 font-bold" style="color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 19px;">Board care</h3><button id="clearHistoryBtn" data-template-id="clear-history-button" class="canva-button mb-3 flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-3 font-bold" type="button" style="background: rgb(228, 243, 235); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Clear recent messages</button>
+       <div id="resetPrompt" class="hidden rounded-xl border-2 border-[#f4c5bf] bg-[#fff1ee] p-3">
+        <p class="mb-3 text-sm font-bold">Reset every category and picture?</p>
+        <div class="flex gap-2"><button id="confirmResetBtn" class="min-h-10 flex-1 rounded-lg bg-[#f26e61] px-2 font-bold text-white" type="button">Yes, reset</button> <button id="cancelResetBtn" class="min-h-10 flex-1 rounded-lg bg-white px-2 font-bold" type="button">Cancel</button>
+        </div>
+       </div><button id="resetBtn" data-template-id="reset-button" class="canva-button flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-3 font-bold" type="button" style="background: rgb(255, 241, 238); color: rgb(184, 62, 53); font-weight: 700; font-style: normal; font-size: 18px;">Reset starter board</button>
+      </section>
+     </aside>
+     <section data-template-id="editor-panel" class="canva-panel rounded-[1.7rem] p-5 shadow-sm" style="background: rgb(255, 253, 248);">
+      <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+       <div>
+        <h3 data-template-id="categories-title" class="canva-text m-0 font-bold" style="color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 19px;">Categories &amp; pictures</h3>
+        <p class="mb-0 mt-1 text-sm text-[#607185]">Tap a category to manage its pictures.</p>
+       </div><button id="addCategoryBtn" data-template-id="add-category-button" class="canva-button flex min-h-11 items-center gap-2 rounded-xl px-3 font-bold" type="button" style="background: rgb(35, 52, 77); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 18px;">Add category</button>
+      </div>
+      <div id="categoryEditorList" class="mb-6 overflow-hidden rounded-2xl border-2 border-[#eadbc7]"></div>
+      <div id="buttonManager" class="hidden">
+       <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <h3 id="manageButtonsTitle" class="m-0 text-lg font-bold">Pictures</h3><button id="addPictureBtn" data-template-id="add-picture-button" class="canva-button flex min-h-11 items-center gap-2 rounded-xl px-3 font-bold" type="button" style="background: rgb(249, 191, 75); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Add picture</button>
+       </div>
+       <div id="pictureEditorList" class="overflow-hidden rounded-2xl border-2 border-[#eadbc7]"></div>
+      </div>
+     </section>
+    </div>
+   </section>
+  </main>
+  <div id="gateModal" class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+   <form id="gateForm" class="w-full max-w-md rounded-[2rem] bg-[#fffdf8] p-6 shadow-2xl">
+    <div class="mb-3 text-4xl">
+     🧑‍🧑‍🧒
+    </div>
+    <h2 id="gateTitle" data-template-id="gate-title" class="canva-text friendly-title mb-2" style="color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 27px;">Grown-up check</h2>
+    <p data-template-id="gate-helper" class="canva-text mb-5" style="color: rgb(82, 101, 123); font-weight: 400; font-style: normal; font-size: 18px;">A quick question helps keep Frank's talking board simple and safe.</p><label class="mb-2 block font-bold" for="gateAnswer">Answer</label> <input id="gateAnswer" class="w-full rounded-xl border-2 border-[#d8c5a4] bg-white p-3 text-lg" inputmode="numeric" required="">
+    <p id="gateQuestion" class="mt-3 font-bold"></p>
+    <p id="gateError" class="hidden mt-2 text-sm font-bold text-[#b83e35]">Try again.</p>
+    <div class="mt-5 flex gap-3"><button data-template-id="gate-unlock-button" class="canva-button min-h-12 flex-1 rounded-xl px-4 font-bold" type="submit" style="background: rgb(35, 52, 77); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 18px;">Open settings</button> <button id="gateCancelBtn" data-template-id="gate-cancel-button" class="canva-button min-h-12 rounded-xl px-4 font-bold" type="button" style="background: rgb(243, 232, 213); color: rgb(35, 52, 77); font-weight: 700; font-style: normal; font-size: 18px;">Cancel</button>
+    </div>
+   </form>
+  </div>
+  <div id="editModal" class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto p-4" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+   <form id="editForm" class="my-auto w-full max-w-lg rounded-[2rem] bg-[#fffdf8] p-6 shadow-2xl">
+    <div class="mb-5 flex items-center justify-between">
+     <h2 id="editTitle" class="friendly-title m-0 text-2xl"></h2><button id="closeEditBtn" class="flex h-10 w-10 items-center justify-center rounded-full bg-[#f3e8d5]" type="button" aria-label="Close editor"><i data-lucide="x"></i></button>
+    </div><input id="editingKind" type="hidden"><input id="editingId" type="hidden">
+    <div id="symbolFields"><label class="mb-2 block font-bold">Pick a picture</label>
+     <div id="symbolPicker" class="mb-4 grid grid-cols-7 gap-2"></div><label class="mb-2 block font-bold" for="symbolInput">Or type a symbol</label> <input id="symbolInput" maxlength="4" class="mb-4 w-full rounded-xl border-2 border-[#d8c5a4] p-3 text-2xl" aria-label="Picture symbol">
+    </div><label class="mb-2 block font-bold" for="nameInput">Name</label> <input id="nameInput" maxlength="70" class="w-full rounded-xl border-2 border-[#d8c5a4] p-3" required=""> <label id="phraseLabel" class="mb-2 mt-4 block font-bold" for="phraseInput">Words to speak</label> <input id="phraseInput" maxlength="120" class="w-full rounded-xl border-2 border-[#d8c5a4] p-3" required="">
+    <div class="mt-5 flex gap-3"><button id="modalPreviewBtn" class="min-h-12 rounded-xl bg-[#dff3e9] px-4 font-bold" type="button"><i data-lucide="volume-2"></i> Preview</button> <button id="saveEditBtn" data-template-id="save-edit-button" class="canva-button min-h-12 flex-1 rounded-xl px-4 font-bold" type="submit" style="background: rgb(242, 110, 97); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 18px;">Save changes</button>
+    </div>
+   </form>
+  </div>
+  <div id="toast" class="toast fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 rounded-full bg-[#23344d] px-5 py-3 font-bold text-white shadow-lg" aria-live="polite"></div>
+  <script>
+    const defaults = () => ({
+      showLabels:true, activeCategory:"feeds", history:[],
+      categories:[
+        {id:"feeds",name:"Feeds",symbol:"🍽️",color:"#f9bf4b",hidden:false,buttons:[
+          {id:"hungry",symbol:"🍎",label:"I'm hungry",phrase:"I'm hungry",hidden:false},
+          {id:"drink",symbol:"🥤",label:"I need a drink",phrase:"I need a drink",hidden:false},
+          {id:"more",symbol:"➕",label:"More please",phrase:"More please",hidden:false}
+        ]},
+        {id:"toilet",name:"Toilet",symbol:"🚽",color:"#9fdcc8",hidden:false,buttons:[
+          {id:"toilet-need",symbol:"🚽",label:"I need the toilet",phrase:"I need the toilet",hidden:false},
+          {id:"wash",symbol:"🧼",label:"Wash hands",phrase:"Wash hands",hidden:false}
+        ]},
+        {id:"outside",name:"Outside",symbol:"🌳",color:"#a9d8f5",hidden:false,buttons:[
+          {id:"outside-go",symbol:"🌞",label:"Let's go outside",phrase:"Let's go outside",hidden:false},
+          {id:"play",symbol:"⚽",label:"I want to play",phrase:"I want to play",hidden:false}
+        ]},
+        {id:"car",name:"Car Ride",symbol:"🚗",color:"#d7c1ef",hidden:false,buttons:[
+          {id:"car-go",symbol:"🚗",label:"Get in the car",phrase:"Get in the car",hidden:false},
+          {id:"seatbelt",symbol:"🪢",label:"Seat belt please",phrase:"Seat belt please",hidden:false}
+        ]},
+        {id:"yesno",name:"Yes / No",symbol:"👍",color:"#ffd3cb",hidden:false,buttons:[
+          {id:"yes",symbol:"👍",label:"Yes",phrase:"Yes",hidden:false},
+          {id:"no",symbol:"👎",label:"No",phrase:"No",hidden:false}
+        ]},
+        {id:"stop",name:"Stop",symbol:"✋",color:"#f59a8f",hidden:false,buttons:[
+          {id:"stop-now",symbol:"🛑",label:"Stop",phrase:"Stop",hidden:false},
+          {id:"help",symbol:"🙋",label:"I need help",phrase:"I need help",hidden:false}
+        ]}
+      ]
+    });
+    let state = defaults(), prefs={voiceName:"",rate:.9,pitch:1.22}, records=[], selectedCategoryId=null, lastMessage=null, gateTotal=0, editingRecord=null, saving=false;
+    const symbols=["🍎","🥤","🍽️","🍪","🚽","🧻","🧼","🌳","🌞","⚽","🚗","🚌","👍","👎","🛑","✋","🙋","❤️","😢","😊","😴","🎵","📱","🏠","🐶","🧸","⭐","👋"];
+    const $=id=>document.getElementById(id);
+    function uid(prefix){return prefix+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6)}
+    function toast(message){const t=$("toast");t.textContent=message;t.classList.add("show");clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove("show"),2600)}
+    function visibleCategories(){return state.categories.filter(c=>!c.hidden)}
+    function activeCategory(){return state.categories.find(c=>c.id===state.activeCategory && !c.hidden)||visibleCategories()[0]}
+    function renderBoard(){
+      const cat=activeCategory(); if(!cat){$("categoryTabs").innerHTML="";$("buttonGrid").innerHTML="";$("emptyBoard").classList.remove("hidden");return}
+      state.activeCategory=cat.id;
+      $("categoryTabs").innerHTML=visibleCategories().map(c=>`<button class="category-tab ${c.id===cat.id?"active":""} flex min-h-20 flex-col items-center justify-center rounded-2xl border-2 border-[#d8c5a4] bg-white px-3 font-bold" data-cat="${c.id}" type="button"><span class="text-3xl">${c.symbol}</span><span class="mt-1 text-sm">${c.name}</span></button>`).join("");
+      document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{state.activeCategory=b.dataset.cat;renderBoard()});
+      const buttons=cat.buttons.filter(b=>!b.hidden); $("buttonCount").textContent=buttons.length+" choices";
+      $("buttonGrid").innerHTML=buttons.map(b=>`<button class="talk-button flex flex-col items-center justify-center rounded-[1.75rem] border-2 border-[#d8c5a4] bg-white p-4 text-center font-bold" data-talk="${b.id}" type="button" aria-label="${b.phrase}"><span class="talk-symbol">${b.symbol}</span>${state.showLabels?`<span class="mt-3 text-base">${b.label}</span>`:""}</button>`).join("");
+      $("emptyBoard").classList.toggle("hidden",buttons.length>0);
+      document.querySelectorAll("[data-talk]").forEach(el=>el.onclick=()=>{const b=cat.buttons.find(x=>x.id===el.dataset.talk);sayButton(b)});
+      renderHistory();
+    }
+    function sayButton(button){lastMessage=button;$("currentPhrase").textContent=button.phrase;$("messageSymbol").textContent=button.symbol;$("replayBtn").disabled=false;speak(button.phrase);state.history=[{phrase:button.phrase,symbol:button.symbol},...state.history.filter(x=>x.phrase!==button.phrase)].slice(0,5);renderHistory()}
+    function renderHistory(){$("historyList").innerHTML=state.history.map((h,i)=>`<button class="flex min-h-11 items-center gap-2 rounded-full bg-[#e4f3eb] px-3 font-bold" data-history="${i}" type="button"><span>${h.symbol}</span>${h.phrase}</button>`).join("");$("historyEmpty").classList.toggle("hidden",state.history.length>0);document.querySelectorAll("[data-history]").forEach(el=>el.onclick=()=>{const h=state.history[+el.dataset.history];lastMessage=h;$("currentPhrase").textContent=h.phrase;$("messageSymbol").textContent=h.symbol;$("replayBtn").disabled=false;speak(h.phrase)})}
+    function speak(text){if(!("speechSynthesis" in window)){toast("Speech is not available in this browser.");return} window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.rate=Number(prefs.rate)||.9;u.pitch=Number(prefs.pitch)||1.22;u.volume=1;const voices=speechSynthesis.getVoices();u.voice=voices.find(v=>v.name===prefs.voiceName)||voices.find(v=>/female|samantha|zira|ava|susan|karen|victoria/i.test(v.name))||voices.find(v=>v.lang.startsWith("en"))||null;window.speechSynthesis.speak(u)}
+    function populateVoices(){const voices=speechSynthesis.getVoices().filter(v=>v.lang.startsWith("en"));$("voiceSelect").innerHTML=voices.map(v=>`<option value="${v.name}">${v.name}</option>`).join("")||"<option>No English voice found</option>";if(!prefs.voiceName&&voices.length)prefs.voiceName=(voices.find(v=>/female|samantha|zira|ava|susan|karen|victoria/i.test(v.name))||voices[0]).name;$("voiceSelect").value=prefs.voiceName}
+    function renderEditor(){
+      $("labelsToggle").checked=state.showLabels;$("rateRange").value=prefs.rate;$("rateValue").textContent=Number(prefs.rate).toFixed(2);populateVoices();
+      $("categoryEditorList").innerHTML=state.categories.map((c,i)=>`<div class="editor-row flex items-center gap-2 bg-white p-3"><button class="text-2xl" data-manage="${c.id}" type="button" aria-label="Manage ${c.name}">${c.symbol}</button><button class="flex-1 text-left font-bold" data-manage="${c.id}" type="button">${c.name}</button><span class="text-xs font-bold ${c.hidden?"text-[#b83e35]":"text-[#46735d]"}">${c.hidden?"HIDDEN":"ON"}</span>${controlButtons("cat",c.id,i,state.categories.length)}</div>`).join("");
+      bindControls(); if(selectedCategoryId)renderPictureEditor();
+    }
+    function controlButtons(type,id,index,length){return `<div class="flex gap-1"><button class="rounded-lg p-2 hover:bg-[#fff1cc]" data-action="up" data-type="${type}" data-id="${id}" ${index===0?"disabled":""} aria-label="Move up">↑</button><button class="rounded-lg p-2 hover:bg-[#fff1cc]" data-action="down" data-type="${type}" data-id="${id}" ${index===length-1?"disabled":""} aria-label="Move down">↓</button><button class="rounded-lg p-2 hover:bg-[#fff1cc]" data-action="toggle" data-type="${type}" data-id="${id}" aria-label="Show or hide">◉</button><button class="rounded-lg p-2 hover:bg-[#fff1cc]" data-action="edit" data-type="${type}" data-id="${id}" aria-label="Edit">✎</button><button class="rounded-lg p-2 text-[#b83e35] hover:bg-[#fff1ee]" data-action="delete" data-type="${type}" data-id="${id}" aria-label="Delete">⌫</button></div>`}
+    function renderPictureEditor(){const cat=state.categories.find(c=>c.id===selectedCategoryId);if(!cat){$("buttonManager").classList.add("hidden");return}$("buttonManager").classList.remove("hidden");$("manageButtonsTitle").textContent=cat.symbol+" "+cat.name+" pictures";$("pictureEditorList").innerHTML=cat.buttons.map((b,i)=>`<div class="editor-row flex items-center gap-2 bg-white p-3"><span class="text-2xl">${b.symbol}</span><button class="flex-1 text-left font-bold" data-action="edit" data-type="pic" data-id="${b.id}" type="button">${b.label}</button><span class="text-xs font-bold ${b.hidden?"text-[#b83e35]":"text-[#46735d]"}">${b.hidden?"HIDDEN":"ON"}</span>${controlButtons("pic",b.id,i,cat.buttons.length)}</div>`).join("");bindControls()}
+    function bindControls(){document.querySelectorAll("[data-manage]").forEach(x=>x.onclick=()=>{selectedCategoryId=x.dataset.manage;renderEditor()});document.querySelectorAll("[data-action]").forEach(x=>x.onclick=()=>manageAction(x.dataset.type,x.dataset.action,x.dataset.id))}
+    function manageAction(type,action,id){let list,typeItem,cat;if(type==="cat"){list=state.categories;typeItem=list.find(x=>x.id===id)}else{cat=state.categories.find(c=>c.id===selectedCategoryId);list=cat.buttons;typeItem=list.find(x=>x.id===id)}const index=list.indexOf(typeItem);
+      if(action==="up"||action==="down"){const target=index+(action==="up"?-1:1);if(list[target]){[list[index],list[target]]=[list[target],list[index]];save();renderEditor();renderBoard()}}
+      if(action==="toggle"){typeItem.hidden=!typeItem.hidden;if(type==="cat"&&typeItem.hidden&&state.activeCategory===id)state.activeCategory=(visibleCategories()[0]||{}).id;save();renderEditor();renderBoard()}
+      if(action==="edit")openEditor(type,typeItem);
+      if(action==="delete"){if(type==="cat"){if(state.categories.length===1){toast("Keep at least one category.");return}state.categories=list.filter(x=>x.id!==id);if(state.activeCategory===id)state.activeCategory=state.categories[0].id;selectedCategoryId=null}else{cat.buttons=list.filter(x=>x.id!==id)}save();renderEditor();renderBoard();toast("Removed.")}
+    }
+    function openEditor(kind,item){editingRecord=item;$("editingKind").value=kind;$("editingId").value=item?.id||"";$("editTitle").textContent=item?"Edit picture":"Add picture";const isCat=kind==="cat";$("symbolFields").classList.toggle("hidden",isCat);$("phraseLabel").classList.toggle("hidden",isCat);$("phraseInput").classList.toggle("hidden",isCat);$("nameInput").value=item?.name||item?.label||"";$("phraseInput").value=item?.phrase||"";$("symbolInput").value=item?.symbol||"🍎";$("editTitle").textContent=isCat?(item?"Edit category":"Add category"):(item?"Edit picture":"Add picture");renderSymbolPicker();$("editModal").classList.remove("hidden");$("editModal").classList.add("flex");$("nameInput").focus()}
+    function renderSymbolPicker(){$("symbolPicker").innerHTML=symbols.map(s=>`<button class="symbol-choice h-11 rounded-lg" type="button" data-symbol="${s}">${s}</button>`).join("");document.querySelectorAll("[data-symbol]").forEach(b=>b.onclick=()=>{$("symbolInput").value=b.dataset.symbol;renderSymbolPicker()})}
+    function closeEdit(){$("editModal").classList.add("hidden");$("editModal").classList.remove("flex")}
+    async function save(){if(saving)return;saving=true;const record={config_json:JSON.stringify(state),preferences_json:JSON.stringify(prefs),updated_at:new Date().toISOString()};let result;if(records[0])result=await window.dataSdk.update({...records[0],...record});else result=await window.dataSdk.create(record);saving=false;if(!result.isOk)toast("Could not save. Please try again.");else toast("Saved for next time.");}
+    const handler={onDataChanged(data){records=data;if(data[0]){try{state=JSON.parse(data[0].config_json)||defaults();prefs=JSON.parse(data[0].preferences_json)||prefs}catch(e){state=defaults()}}renderBoard();if(!$("caregiverView").classList.contains("hidden-view"))renderEditor()}};
+    async function init(){const result=await window.dataSdk.init(handler);if(!result.isOk)toast("Saving is unavailable right now.");renderBoard();populateVoices()}
+    function openGate(){gateTotal=3+4;$("gateQuestion").textContent="Quick grown-up check: what is 3 + 4?";$("gateAnswer").value="";$("gateError").classList.add("hidden");$("gateModal").removeAttribute("style");$("gateModal").classList.remove("hidden");$("gateModal").classList.add("flex");setTimeout(()=>$("gateAnswer").focus(),20)}
+    function closeGate(){$("gateModal").classList.add("hidden");$("gateModal").classList.remove("flex")}
+    function openCaregiver(){closeGate();$("boardView").classList.add("hidden-view");$("caregiverView").classList.remove("hidden-view");renderEditor()}
+    $("caregiverBtn").onclick=openGate;$("gateCancelBtn").onclick=closeGate;$("gateForm").onsubmit=e=>{e.preventDefault();if(Number($("gateAnswer").value)===gateTotal)openCaregiver();else $("gateError").classList.remove("hidden")};
+    $("backToBoardBtn").onclick=()=>{$("caregiverView").classList.add("hidden-view");$("boardView").classList.remove("hidden-view");renderBoard()};
+    $("homeBtn").onclick=()=>{state.activeCategory=(visibleCategories()[0]||{}).id;renderBoard();$("boardView").classList.remove("hidden-view");$("caregiverView").classList.add("hidden-view")};
+    $("replayBtn").onclick=()=>lastMessage&&speak(lastMessage.phrase);
+    $("voicePreviewBtn").onclick=()=>speak("Hello Frank! I am ready to listen.");
+    $("stopVoiceBtn").onclick=()=>speechSynthesis.cancel();
+    $("voiceSelect").onchange=()=>{prefs.voiceName=$("voiceSelect").value;save()};$("rateRange").onchange=()=>{prefs.rate=$("rateRange").value;$("rateValue").textContent=Number(prefs.rate).toFixed(2);save()};$("labelsToggle").onchange=()=>{state.showLabels=$("labelsToggle").checked;save();renderBoard()};
+    $("clearHistoryBtn").onclick=()=>{state.history=[];save();renderHistory();toast("History cleared.")};
+    $("resetBtn").onclick=()=>{$("resetPrompt").classList.remove("hidden");$("resetBtn").classList.add("hidden")};$("cancelResetBtn").onclick=()=>{$("resetPrompt").classList.add("hidden");$("resetBtn").classList.remove("hidden")};$("confirmResetBtn").onclick=()=>{state=defaults();prefs={voiceName:"",rate:.9,pitch:1.22};selectedCategoryId=null;save();renderEditor();renderBoard();$("resetPrompt").classList.add("hidden");$("resetBtn").classList.remove("hidden");toast("Back to the starter board.")};
+    $("addCategoryBtn").onclick=()=>openEditor("cat",null);$("addPictureBtn").onclick=()=>openEditor("pic",null);$("closeEditBtn").onclick=closeEdit;
+    $("modalPreviewBtn").onclick=()=>{const text=$("phraseInput").value||$("nameInput").value;speak(text)};
+    $("editForm").onsubmit=e=>{e.preventDefault();const kind=$("editingKind").value,name=$("nameInput").value.trim(),phrase=$("phraseInput").value.trim(),symbol=$("symbolInput").value.trim()||"⭐";if(kind==="cat"){if(editingRecord){editingRecord.name=name}else{const item={id:uid("cat"),name,symbol:"⭐",color:"#d7c1ef",hidden:false,buttons:[]};state.categories.push(item);selectedCategoryId=item.id}}else{const cat=state.categories.find(c=>c.id===selectedCategoryId);if(editingRecord){Object.assign(editingRecord,{symbol,label:name,phrase})}else cat.buttons.push({id:uid("pic"),symbol,label:name,phrase,hidden:false})}closeEdit();save();renderEditor();renderBoard()};
+    document.addEventListener("DOMContentLoaded",()=>{lucide.createIcons();init();speechSynthesis.onvoiceschanged=populateVoices});
+  </script>
+ 
+</body></html>
