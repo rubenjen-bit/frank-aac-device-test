@@ -211,7 +211,47 @@
     }
     function sayButton(button){lastMessage=button;$("currentPhrase").textContent=button.phrase;$("messageSymbol").textContent=button.symbol;$("replayBtn").disabled=false;speak(button.phrase);state.history=[{phrase:button.phrase,symbol:button.symbol},...state.history.filter(x=>x.phrase!==button.phrase)].slice(0,5);renderHistory()}
     function renderHistory(){$("historyList").innerHTML=state.history.map((h,i)=>`<button class="flex min-h-11 items-center gap-2 rounded-full bg-[#e4f3eb] px-3 font-bold" data-history="${i}" type="button"><span>${h.symbol}</span>${h.phrase}</button>`).join("");$("historyEmpty").classList.toggle("hidden",state.history.length>0);document.querySelectorAll("[data-history]").forEach(el=>el.onclick=()=>{const h=state.history[+el.dataset.history];lastMessage=h;$("currentPhrase").textContent=h.phrase;$("messageSymbol").textContent=h.symbol;$("replayBtn").disabled=false;speak(h.phrase)})}
-    function speak(text){if(!("speechSynthesis" in window)){toast("Speech is not available in this browser.");return} window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.rate=Number(prefs.rate)||.9;u.pitch=Number(prefs.pitch)||1.22;u.volume=1;const voices=speechSynthesis.getVoices();u.voice=voices.find(v=>v.name===prefs.voiceName)||voices.find(v=>/female|samantha|zira|ava|susan|karen|victoria/i.test(v.name))||voices.find(v=>v.lang.startsWith("en"))||null;window.speechSynthesis.speak(u)}
+   function speak(text){
+  if(!("speechSynthesis" in window)){
+    toast("Speech is not available in this browser.");
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+
+  const u = new SpeechSynthesisUtterance(text);
+
+  // Default voice settings
+  let rate = Number(prefs.rate) || .9;
+  let pitch = Number(prefs.pitch) || 1.22;
+
+  // Make Feeds and Meds more sing-song
+  if(text.toLowerCase() === "feeds"){
+    rate = .72;
+    pitch = 1.45;
+    u.text = "Feeeeds";
+  }
+
+  if(text.toLowerCase() === "meds"){
+    rate = .72;
+    pitch = 1.45;
+    u.text = "Meeeds";
+  }
+
+  u.rate = rate;
+  u.pitch = pitch;
+  u.volume = 1;
+
+  const voices = speechSynthesis.getVoices();
+
+  u.voice =
+    voices.find(v => v.name === prefs.voiceName) ||
+    voices.find(v => /female|samantha|zira|ava|susan|karen|victoria/i.test(v.name)) ||
+    voices.find(v => v.lang.startsWith("en")) ||
+    null;
+
+  window.speechSynthesis.speak(u);
+}
     function populateVoices(){const voices=speechSynthesis.getVoices().filter(v=>v.lang.startsWith("en"));$("voiceSelect").innerHTML=voices.map(v=>`<option value="${v.name}">${v.name}</option>`).join("")||"<option>No English voice found</option>";if(!prefs.voiceName&&voices.length)prefs.voiceName=(voices.find(v=>/female|samantha|zira|ava|susan|karen|victoria/i.test(v.name))||voices[0]).name;$("voiceSelect").value=prefs.voiceName}
     function renderEditor(){
       $("labelsToggle").checked=state.showLabels;$("rateRange").value=prefs.rate;$("rateValue").textContent=Number(prefs.rate).toFixed(2);populateVoices();
