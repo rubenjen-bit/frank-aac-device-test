@@ -184,7 +184,7 @@
           {id:"toy",symbol:"🧸",label:"I want a toy",phrase:"I want a toy! A Toy! A Toy!",hidden:false}
         ]},
         {id:"car",name:"Car Ride",symbol:"🚗",color:"#d7c1ef",hidden:false,buttons:[
-          {id:"car-go",symbol:"🚗",label:"Car ride",phrase:"Car ride, van ride",hidden:false},
+          {id:"car-go",symbol:"🚗",label:"Car ride",phrase:"Car ride, van ride, car ride, car ride",hidden:false},
           {id:"seatbelt",symbol:"🪢",label:"Seat belt please",phrase:"Seat belt please",hidden:false}
         ]},
         {id:"yesno",name:"Yes / No",symbol:"👍",color:"#ffd3cb",hidden:false,buttons:[
@@ -207,7 +207,7 @@
     function renderBoard(){
       const cat=activeCategory(); if(!cat){$("categoryTabs").innerHTML="";$("buttonGrid").innerHTML="";$("emptyBoard").classList.remove("hidden");return}
       state.activeCategory=cat.id;
-      $("categoryTabs").innerHTML=visibleCategories().map(c=>`<button class="category-tab ${c.id===cat.id?"active":""} flex min-h-20 flex-col items-center justify-center rounded-2xl border-2 border-[#d8c5a4] bg-white px-3 font-bold" data-cat="${c.id}" type="button"><span class="text-3xl">${c.symbol}</span><span class="mt-1 text-sm">${c.name}</span></button>`).join("");
+      $("categoryTabs").innerHTML=visibleCategories().map(c=>`<button class="category-tab ${c.id===cat.id?"active":""} flex h-32 w-32 min-w-32 flex-col items-center justify-center rounded-2xl border-2 border-[#d8c5a4] bg-white px-3 font-bold" data-cat="${c.id}" type="button"><span class="text-3xl">${c.symbol}</span><span class="mt-1 text-sm">${c.name}</span></button>`).join("");
       document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{state.activeCategory=b.dataset.cat;renderBoard()});
       const buttons=cat.buttons.filter(b=>!b.hidden); $("buttonCount").textContent=buttons.length+" choices";
       $("buttonGrid").innerHTML=buttons.map(b=>`<button class="talk-button flex flex-col items-center justify-center rounded-[1.75rem] border-2 border-[#d8c5a4] bg-white p-4 text-center font-bold" data-talk="${b.id}" type="button" aria-label="${b.phrase}"><span class="talk-symbol">${b.symbol}</span>${state.showLabels?`<span class="mt-3 text-base">${b.label}</span>`:""}</button>`).join("");
