@@ -10,7 +10,12 @@
     body { margin:0; min-width:320px; font-family:"DM Sans",sans-serif; color:var(--ink); }
     .app-shell { width:100%; min-height:calc(100 * min(var(--vh, 1vh), 1vh)); background:#fff8eb; background-image:radial-gradient(circle at 8% 7%,#ffe1aa 0 3%,transparent 3.2%),radial-gradient(circle at 92% 14%,#cdeee2 0 5%,transparent 5.2%),linear-gradient(135deg,#fff8eb,#fffdf8); }
     .friendly-title { font-family:Fraunces,serif; }
-   .category-tab { min-width:108px; transition:transform .16s ease,box-shadow .16s ease; }
+  .category-tab {
+  width: 2in;
+  height: 2in;
+  min-width: 2in;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
 .category-tab .text-3xl { font-size:3.5rem !important; }
     .category-tab:hover,.category-tab:focus-visible { transform:translateY(-3px); }
     .category-tab.active { background:var(--red)!important; color:#fff!important; box-shadow:0 8px 0 #152439; }
