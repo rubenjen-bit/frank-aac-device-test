@@ -187,7 +187,7 @@
         ]}
       ]
     });
-    let state = defaults(), prefs={voiceName:"",rate:.9,pitch:1.22}, records=[], selectedCategoryId=null, lastMessage=null, gateTotal=0, editingRecord=null, saving=false;
+    let state = defaults(), prefs={voiceName:"",rate:.9,pitch:1.5}, records=[], selectedCategoryId=null, lastMessage=null, gateTotal=0, editingRecord=null, saving=false;
     const symbols=["🍎","🥤","🍽️","🍪","🚽","🧻","🧼","🌳","🌞","⚽","🚗","🚌","👍","👎","🛑","✋","🙋","❤️","😢","😊","😴","🎵","📱","🏠","🐶","🧸","⭐","👋"];
     const $=id=>document.getElementById(id);
     function uid(prefix){return prefix+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6)}
