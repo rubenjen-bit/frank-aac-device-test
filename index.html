@@ -161,7 +161,7 @@
       showLabels:true, activeCategory:"feeds", history:[],
       categories:[
         {id:"feeds",name:"Feeds",symbol:"🍽️",color:"#f9bf4b",hidden:false,buttons:[
-          {id:"feeds",symbol:"🍎",label:"Feeds",phrase:"Feeds",hidden:false},
+          {id:"feeds",symbol:"💉",label:"Feeds",phrase:"Feeds",hidden:false},
           {id:"water",symbol:"🥤",label:"Water",phrase:"Water",hidden:false},
           {id:"more",symbol:"➕",label:"More",phrase:"More",hidden:false}
         ]},
@@ -171,7 +171,7 @@
         ]},
         {id:"outside",name:"Outside",symbol:"🌳",color:"#a9d8f5",hidden:false,buttons:[
           {id:"outside-go",symbol:"🌞",label:"Let's go outside",phrase:"Let's go outside",hidden:false},
-          {id:"toy",symbol:"⚽",label:"I want a toy",phrase:"I want a toy",hidden:false}
+          {id:"toy",symbol:"🧸",label:"I want a toy",phrase:"I want a toy",hidden:false}
         ]},
         {id:"car",name:"Car Ride",symbol:"🚗",color:"#d7c1ef",hidden:false,buttons:[
           {id:"car-go",symbol:"🚗",label:"Car ride",phrase:"Car ride",hidden:false},
@@ -188,7 +188,7 @@
       ]
     });
     let state = defaults(), prefs={voiceName:"",rate:.9,pitch:1.5}, records=[], selectedCategoryId=null, lastMessage=null, gateTotal=0, editingRecord=null, saving=false;
-    const symbols=["🍎","🥤","🍽️","🍪","🚽","🧻","🧼","🌳","🌞","⚽","🚗","🚌","👍","👎","🛑","✋","🙋","❤️","😢","😊","😴","🎵","📱","🏠","🐶","🧸","⭐","👋"];
+    const symbols=["🍲","💉","🍽️","🍪","🚽","🧻","🧼","🌳","🌞","🧸","🚗","🚌","👍","👎","🛑","✋","🙋","❤️","😢","😊","😴","🎵","📱","🏠","🐶","🧸","⭐","👋"];
     const $=id=>document.getElementById(id);
     function uid(prefix){return prefix+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,6)}
     function toast(message){const t=$("toast");t.textContent=message;t.classList.add("show");clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove("show"),2600)}
